@@ -3,6 +3,7 @@ package devandroid.dutra.applistacurso.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import devandroid.dutra.applistacurso.R;
 import devandroid.dutra.applistacurso.model.Pessoa;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setCursoDesejado("Android");
         pessoa.setTelefoneContato("77988441546");
 
-
+        Log.i("POOAndroid",pessoa.toString());
 
     }
 }

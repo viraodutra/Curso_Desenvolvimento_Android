@@ -70,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNomeDoCurso" />
 
-    <Button android:id="@+id/bntFinalizar"
+    <Button android:id="@+id/btnFinalizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -81,12 +81,12 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneDeContato"
         app:layout_constraintVertical_bias="0.707" />
 
-    <Button android:id="@+id/bntSalvar"
+    <Button android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:text="@string/txt_button_salvar"
-        app:layout_constraintBottom_toTopOf="@+id/bntFinalizar"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toEndOf="@+id/btnLimpar"
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="@string/txt_button_limpar"
-        app:layout_constraintBottom_toTopOf="@+id/bntFinalizar"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneDeContato"
         app:layout_constraintVertical_bias="0.648" />

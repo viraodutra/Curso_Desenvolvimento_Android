@@ -42,7 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new PessoaController();
         controller.toString();
+
         pessoa = new Pessoa();
+
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
+        pessoa.setSobreNome(preferences.getString("sobreNome", ""));
+        pessoa.setCursoDesejado(preferences.getString("nomeCurso", ""));
+        pessoa.setTelefoneContato(preferences.getString("telefoneContato", ""));
+
         pessoa.setPrimeiroNome("Victor");
         pessoa.setSobreNome("Antonio");
         pessoa.setCursoDesejado("Android");
@@ -54,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         editSobreNome = findViewById(R.id.editSobreNome);
         editNomeDoCurso = findViewById(R.id.editNomeDoCurso);
         editTelefoneDeContato = findViewById(R.id.editTelefoneDeContato);
+
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobreNome.setText(pessoa.getSobreNome());
+        editNomeDoCurso.setText(pessoa.getCursoDesejado());
+        editTelefoneDeContato.setText(pessoa.getTelefoneContato());
 
         btnFinalizar = findViewById(R.id.btnFinalizar);
         btnLimpar = findViewById(R.id.btnLimpar);

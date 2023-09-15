@@ -2,6 +2,7 @@ package devandroid.dutra.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,9 @@ import devandroid.dutra.applistacurso.controller.PessoaController;
 import devandroid.dutra.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_listavip";
 
     Pessoa pessoa;
     PessoaController controller;
@@ -33,9 +37,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        preferences = getSharedPreferences(NOME_PREFERENCES, 0);
+        SharedPreferences.Editor listaVip = preferences.edit();
+
         controller = new PessoaController();
         controller.toString();
+
         pessoa = new Pessoa();
+
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome", ""));
+        pessoa.setSobreNome(preferences.getString("sobreNome", ""));
+        pessoa.setCursoDesejado(preferences.getString("nomeCurso", ""));
+        pessoa.setTelefoneContato(preferences.getString("telefoneContato", ""));
+
         pessoa.setPrimeiroNome("Victor");
         pessoa.setSobreNome("Antonio");
         pessoa.setCursoDesejado("Android");
@@ -47,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         editSobreNome = findViewById(R.id.editSobreNome);
         editNomeDoCurso = findViewById(R.id.editNomeDoCurso);
         editTelefoneDeContato = findViewById(R.id.editTelefoneDeContato);
+
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobreNome.setText(pessoa.getSobreNome());
+        editNomeDoCurso.setText(pessoa.getCursoDesejado());
+        editTelefoneDeContato.setText(pessoa.getTelefoneContato());
 
         btnFinalizar = findViewById(R.id.btnFinalizar);
         btnLimpar = findViewById(R.id.btnLimpar);
@@ -86,7 +105,17 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Salvo!" + pessoa.toString(), Toast.LENGTH_LONG).show();
 
+                listaVip.putString("primeiroNome",pessoa.getPrimeiroNome());
+                listaVip.putString("sobreNome",pessoa.getSobreNome());
+                listaVip.putString("nomeCurso",pessoa.getCursoDesejado());
+                listaVip.putString("telefoneContato",pessoa.getTelefoneContato());
+                listaVip.apply();
+
+
+
                 controller.salvar(pessoa);
+
+
 
 
             }

@@ -1,4 +1,18 @@
 package devandroid.dutra.applistacurso.model;
 
 public class Curso {
+
+    private String nomeDoCursoDesejado;
+
+    public Curso(String nomeDoCursoDesejado) {
+        this.nomeDoCursoDesejado = getNomeDoCursoDesejado();
+    }
+
+    public String getNomeDoCursoDesejado() {
+        return nomeDoCursoDesejado;
+    }
+
+    public void setNomeDoCursoDesejado(String nomeDoCursoDesejado) {
+        this.nomeDoCursoDesejado = nomeDoCursoDesejado;
+    }
 }

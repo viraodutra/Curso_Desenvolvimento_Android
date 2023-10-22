@@ -8,10 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.List;
+
 import devandroid.dutra.applistacurso.R;
+import devandroid.dutra.applistacurso.controller.CursoController;
 import devandroid.dutra.applistacurso.controller.PessoaController;
+import devandroid.dutra.applistacurso.model.Curso;
 import devandroid.dutra.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     Pessoa pessoa;
+
     PessoaController controller;
+    CursoController cursoController;
+
+    List<Curso> listaDeCursos;
 
     EditText editPrimeiroNome;
     EditText editSobreNome;
@@ -32,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnFinalizar;
     Button btnSalvar;
     Button btnLimpar;
+
+    Spinner Spinner;
 
 
     @Override
@@ -46,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new PessoaController(MainActivity.this);
         controller.toString();
+
+        cursoController = new CursoController();
+        listaDeCursos = cursoController.getListaDeCursos();
 
         pessoa = new Pessoa();
         controller.buscar(pessoa);

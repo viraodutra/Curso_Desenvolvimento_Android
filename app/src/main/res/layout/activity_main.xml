@@ -81,6 +81,31 @@
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneDeContato"
         app:layout_constraintVertical_bias="0.707" />
 
+    <TextView
+        android:id="@+id/txtListaSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/selecione_um_curso"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefoneDeContato"
+        app:layout_constraintVertical_bias="0.389" />
+
+
     <Button android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,5 +127,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefoneDeContato"
         app:layout_constraintVertical_bias="0.648" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

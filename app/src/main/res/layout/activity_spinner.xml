@@ -26,6 +26,7 @@
                 android:background="@color/vermelha"
                 android:gravity="center_horizontal"
                 android:text="@string/txt_titulo"
+                android:textColor="#212121"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -78,7 +79,6 @@
                 android:inputType="text" />
 
 
-
             <TextView
                 android:id="@+id/txtListaSpinner"
                 android:layout_width="match_parent"
@@ -90,6 +90,7 @@
                 android:background="@color/vermelha"
                 android:gravity="center_horizontal"
                 android:text="@string/txt_selecione_um_curso"
+                android:textColor="#212121"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
